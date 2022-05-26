@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-CheckIn</title>
+    <link rel="stylesheet" href="assets/quasar.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+    />
+    <script src="assets/quasar.umd.min.js"></script>
+    <script src="assets/vue.js"></script>
+    <script src="apps.js"></script>
+  </head>
+  <body>
+    <div id="apps">
+      <div class="q-pa-md">
+        <q-stepper
+          v-model="step"
+          ref="stepper"
+          color="primary"
+          header-nav
+          animated
+        >
+          <q-step
+            :name="1"
+            title="Reservation List"
+            icon="edit"
+            :error="step < 3"
+            :done="step > 1"
+          >
+            Page 1.
+          </q-step>
+
+          <q-step
+            :name="2"
+            title="Create an ad group"
+            caption="Optional"
+            icon="create_new_folder"
+            :done="step > 2"
+          >
+            Page 2.
+          </q-step>
+
+          <q-step :name="3" title="Create an ad" icon="add_comment">
+            Page 3.
+          </q-step>
+
+          <template v-slot:navigation>
+            <q-stepper-navigation>
+              <q-btn
+                @click="$refs.stepper.next()"
+                color="primary"
+                :label="step === 3 ? 'Finish' : 'Next'"
+              >
+              </q-btn>
+              <q-btn
+                v-if="step > 1"
+                flat
+                color="primary"
+                @click="$refs.stepper.previous()"
+                label="Back"
+                class="q-ml-sm"
+              ></q-btn>
+            </q-stepper-navigation>
+          </template>
+        </q-stepper>
+      </div>
+    </div>
+  </body>
+</html>

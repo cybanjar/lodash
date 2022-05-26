@@ -1,0 +1,22 @@
+{
+    "data": {
+        "attactments": [
+            {
+                "berkasId": 142550,
+                "category": "ktp",
+                "url": "https://cdn.quasar.dev/img/avatar.png"
+            },
+            {
+                "berkasId": 142551,
+                "category": "foto",
+                "url": "https://cdn.quasar.dev/img/boy-avatar.png"
+            }
+        ],
+        "user": {
+            "email": "syamsul@gmail.com",
+            "userId": 691315
+        }
+    },
+    "code": 200,
+    "message": "Success get detail data"
+}
